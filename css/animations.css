@@ -1,0 +1,215 @@
+/* ==========================================================================
+   ANIMATIONS & 3D TRANSFORMS STYLESHEET (AUDITED & OPTIMIZED)
+   Author: Abdul Razak Bhutto
+   Role: Computer Science Subject Specialist | MPhil Scholar
+   Architecture: GPU-Accelerated Keyframes, 3D Matrix Transforms & Reveal States
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CORE KEYFRAME DEFINITIONS
+   -------------------------------------------------------------------------- */
+
+/* Atmospheric Ambient Pulse */
+@keyframes ambientPulse {
+
+    0%,
+    100% {
+        transform: scale(1) translate3d(0, 0, 0);
+        opacity: 0.4;
+    }
+
+    50% {
+        transform: scale(1.08) translate3d(10px, -15px, 0);
+        opacity: 0.7;
+    }
+}
+
+/* Subtle Shimmer Sweep */
+@keyframes borderShimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Float Animation for Badges & Accents */
+@keyframes luxuryFloat {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(1deg);
+    }
+}
+
+/* Dynamic Radial Radar Scan for Terminal Status */
+@keyframes radarScan {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+    }
+}
+
+/* --------------------------------------------------------------------------
+   2. 3D CARD PERSPECTIVE & HARDWARE-ACCELERATED TILT
+   -------------------------------------------------------------------------- */
+.tilt-card-container {
+    perspective: 1200px;
+    -webkit-perspective: 1200px;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+}
+
+.tilt-card {
+    transition: transform 0.15s ease-out, box-shadow 0.3s ease;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    will-change: transform, box-shadow;
+}
+
+.tilt-card-inner {
+    transform: translateZ(30px);
+    -webkit-transform: translateZ(30px);
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+}
+
+.tilt-card-badge {
+    transform: translateZ(45px);
+    -webkit-transform: translateZ(45px);
+}
+
+/* --------------------------------------------------------------------------
+   3. STAGGERED SCROLL ENTRANCE REVEAL UTILITIES
+   -------------------------------------------------------------------------- */
+.reveal-fade-up {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-fade-left {
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-fade-right {
+    opacity: 0;
+    transform: translate3d(30px, 0, 0);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-scale-in {
+    opacity: 0;
+    transform: scale(0.94) translate3d(0, 0, 0);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+/* Active Trigger Class Injected via IntersectionObserver */
+.revealed {
+    opacity: 1 !important;
+    transform: translate3d(0, 0, 0) scale(1) !important;
+}
+
+/* Staggered Delay Timing Classes */
+.delay-100 {
+    transition-delay: 100ms;
+}
+
+.delay-200 {
+    transition-delay: 200ms;
+}
+
+.delay-300 {
+    transition-delay: 300ms;
+}
+
+.delay-400 {
+    transition-delay: 400ms;
+}
+
+.delay-500 {
+    transition-delay: 500ms;
+}
+
+/* --------------------------------------------------------------------------
+   4. INTERACTIVE MICRO-ANIMATION UTILITIES
+   -------------------------------------------------------------------------- */
+.animate-float {
+    animation: luxuryFloat 5s ease-in-out infinite;
+}
+
+.status-radar-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: var(--accent-emerald);
+    border-radius: 50%;
+    animation: radarScan 2s infinite;
+}
+
+/* Glass Surface Shimmer Sweep */
+.shimmer-active {
+    background: linear-gradient(90deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(212, 175, 55, 0.1) 50%,
+            rgba(255, 255, 255, 0) 100%);
+    background-size: 200% 100%;
+    animation: borderShimmer 4s infinite linear;
+}
+
+/* --------------------------------------------------------------------------
+   5. ACCESSIBILITY OVERRIDES (Prefers-Reduced-Motion)
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+
+    .tilt-card-container,
+    .tilt-card,
+    .tilt-card-inner,
+    .tilt-card-badge {
+        perspective: none !important;
+        -webkit-perspective: none !important;
+        transform: none !important;
+        -webkit-transform: none !important;
+        transition: none !important;
+    }
+
+    .reveal-fade-up,
+    .reveal-fade-left,
+    .reveal-fade-right,
+    .reveal-scale-in {
+        opacity: 1 !important;
+        transform: none !important;
+        -webkit-transform: none !important;
+        transition: none !important;
+    }
+
+    .animate-float,
+    .status-radar-dot,
+    .shimmer-active {
+        animation: none !important;
+    }
+}

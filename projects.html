@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Engineering Capstones & Projects | Abdul Razak Bhutto</title>
+        <meta name="description"
+            content="Interactive portfolio showcase of software engineering systems, capstones, and web platforms engineered by Abdul Razak Bhutto.">
+        <meta name="author" content="Abdul Razak Bhutto">
+
+        <!-- Open Graph & Social Metadata -->
+        <meta property="og:title" content="Engineering Capstones & Projects | Abdul Razak Bhutto">
+        <meta property="og:description"
+            content="Software capstones, relational database architectures, and zero-dependency web systems.">
+        <meta property="og:type" content="website">
+
+        <!-- Dynamic Favicon Link -->
+        <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgo=">
+
+        <!-- Luxury Core Stylesheets -->
+        <link rel="stylesheet" href="css/luxury-core.css">
+        <link rel="stylesheet" href="css/glassmorphism.css">
+        <link rel="stylesheet" href="css/components.css">
+        <link rel="stylesheet" href="css/animations.css">
+    </head>
+
+    <body>
+
+        <!-- Viewport Scroll Progress Bar -->
+        <div id="scroll-progress"></div>
+
+        <!-- Toast Notification Container -->
+        <div id="toast-container" role="status" aria-live="polite"
+            style="position: fixed; top: 90px; right: 24px; z-index: 9999; display: flex; flex-direction: column; align-items: flex-end;">
+        </div>
+
+        <!-- Sticky Luxury Frosted Glass Navbar -->
+        <header class="navbar">
+            <div class="container nav-container">
+                <a href="index.html" class="nav-brand" aria-label="Abdul Razak Bhutto Homepage">
+                    <span class="nav-monogram">AR</span>
+                    <span>AR.BHUTTO</span>
+                </a>
+
+                <!-- Navigation Links -->
+                <nav class="nav-menu" aria-label="Primary Navigation">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="about.html" class="nav-link">Academic Dossier</a>
+                    <a href="research.html" class="nav-link">Research & Publications</a>
+                    <a href="projects.html" class="nav-link active">Engineering Capstones</a>
+                    <a href="contact.html" class="nav-link">Contact Hub</a>
+                </nav>
+
+                <!-- Action Button & Hamburger Toggle -->
+                <div style="display: flex; align-items: center; gap: 16px;">
+                    <a href="contact.html" class="btn btn-gold"
+                        style="padding: 8px 18px; font-size: 0.85rem;">Inquire</a>
+                    <button class="nav-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+                        <span class="nav-toggle-bar"></span>
+                        <span class="nav-toggle-bar"></span>
+                        <span class="nav-toggle-bar"></span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content Wrapper -->
+        <main style="padding-top: calc(var(--nav-height) + 40px);">
+
+            <!-- Section: Header Overview -->
+            <section class="section" style="padding-bottom: 40px;">
+                <div class="container">
+                    <div class="section-header reveal-fade-up">
+                        <div class="section-eyebrow">Engineered Systems</div>
+                        <h1 class="section-title">Software Capstones & <span class="text-gradient-gold">Web
+                                Architectures</span></h1>
+                        <p class="section-subtitle">
+                            A curated portfolio of full-stack management systems, relational databases, and
+                            high-performance zero-dependency web interfaces built with strict adherence to the Software
+                            Development Life Cycle.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: 3D Interactive Project Showcase Cards -->
+            <section class="section" style="padding-top: 0; padding-bottom: 80px;" aria-label="Software Capstones">
+                <div class="container">
+
+                    <div style="display: flex; flex-direction: column; gap: 48px;">
+
+                        <!-- Project 1: Chill Time Cafeteria Management System -->
+                        <div class="glass-card-gold reveal-fade-up tilt-card glass-spotlight"
+                            style="padding: 40px 32px;">
+                            <div class="tilt-card-inner">
+                                <div
+                                    style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 20px;">
+                                    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                                        <span class="glass-pill glass-pill-gold">Undergraduate FYP</span>
+                                        <span class="glass-pill">Point of Sale (POS)</span>
+                                        <span class="glass-pill">Full-Stack Database</span>
+                                    </div>
+                                    <span
+                                        style="font-family: var(--font-mono); color: var(--accent-gold); font-size: 0.85rem;">2024
+                                        Capstone</span>
+                                </div>
+
+                                <h2
+                                    style="font-size: clamp(1.4rem, 2.5vw, 1.9rem); margin-bottom: 14px; color: #ffffff;">
+                                    Chill Time Cafeteria Management System
+                                </h2>
+
+                                <p
+                                    style="font-size: 1rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 24px;">
+                                    Engineered as a comprehensive final year undergraduate project (FYP) at Shah Abdul
+                                    Latif University (Ghotki Campus). The system digitizes university dining operations
+                                    by offering an interactive digital menu, real-time inventory threshold tracking,
+                                    role-based order processing for kitchen staff, and automated daily sales and revenue
+                                    auditing modules.
+                                </p>
+
+                                <!-- Architecture / Tech Spec Badges -->
+                                <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px;">
+                                    <span class="glass-pill"
+                                        style="background: rgba(212, 175, 55, 0.08); border-color: rgba(212, 175, 55, 0.2);">Semantic
+                                        HTML5</span>
+                                    <span class="glass-pill"
+                                        style="background: rgba(212, 175, 55, 0.08); border-color: rgba(212, 175, 55, 0.2);">Custom
+                                        CSS3 Architecture</span>
+                                    <span class="glass-pill"
+                                        style="background: rgba(212, 175, 55, 0.08); border-color: rgba(212, 175, 55, 0.2);">Vanilla
+                                        JavaScript Core</span>
+                                    <span class="glass-pill"
+                                        style="background: rgba(212, 175, 55, 0.08); border-color: rgba(212, 175, 55, 0.2);">Relational
+                                        SQL Database</span>
+                                </div>
+
+                                <!-- Metrics & Architectural Highlights -->
+                                <div
+                                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; background: rgba(7, 10, 15, 0.6); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--glass-border);">
+                                    <div>
+                                        <div
+                                            style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">
+                                            Core Objective</div>
+                                        <div style="font-weight: 600; color: var(--text-primary); font-size: 0.92rem;">
+                                            POS & Inventory Automation</div>
+                                    </div>
+                                    <div>
+                                        <div
+                                            style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">
+                                            Transaction Handling</div>
+                                        <div style="font-weight: 600; color: var(--accent-gold); font-size: 0.92rem;">
+                                            Real-Time Queue Dispatch</div>
+                                    </div>
+                                    <div>
+                                        <div
+                                            style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">
+                                            Reporting Engine</div>
+                                        <div
+                                            style="font-weight: 600; color: var(--accent-emerald); font-size: 0.92rem;">
+                                            Automated Sales Auditing</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 2: Web-Based Library Management System (LMS) -->
+                        <div class="glass-card-cyan reveal-fade-up delay-100 tilt-card glass-spotlight"
+                            style="padding: 40px 32px;">
+                            <div class="tilt-card-inner">
+                                <div
+                                    style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 20px;">
+                                    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                                        <span class="glass-pill"
+                                            style="border-color: var(--accent-cyan); color: var(--accent-cyan);">Undergraduate
+                                            3rd Year</span>
+                                        <span class="glass-pill">Academic Automation</span>
+                                        <span class="glass-pill">Cataloging Engine</span>
+                                    </div>
+                                    <span
+                                        style="font-family: var(--font-mono); color: var(--accent-cyan); font-size: 0.85rem;">2023
+                                        System</span>
+                                </div>
+
+                                <h2
+                                    style="font-size: clamp(1.4rem, 2.5vw, 1.9rem); margin-bottom: 14px; color: #ffffff;">
+                                    Web-Based Library Management System (LMS)
+                                </h2>
+
+                                <p
+                                    style="font-size: 1rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 24px;">
+                                    Designed and developed during third-year undergraduate studies to automate the
+                                    manual, paper-bound indexing operations of institutional libraries. Implements
+                                    indexed catalog searches across books and periodicals, tracks multi-tier borrowing
+                                    privileges for faculty and students, and executes automated overdue fine calculation
+                                    algorithms.
+                                </p>
+
+                                <!-- Architecture / Tech Spec Badges -->
+                                <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px;">
+                                    <span class="glass-pill"
+                                        style="background: rgba(6, 182, 212, 0.08); border-color: rgba(6, 182, 212, 0.2);">HTML5
+                                        Data Tables</span>
+                                    <span class="glass-pill"
+                                        style="background: rgba(6, 182, 212, 0.08); border-color: rgba(6, 182, 212, 0.2);">Responsive
+                                        CSS Layouts</span>
+                                    <span class="glass-pill"
+                                        style="background: rgba(6, 182, 212, 0.08); border-color: rgba(6, 182, 212, 0.2);">Client-Side
+                                        DOM Manipulation</span>
+                                    <span class="glass-pill"
+                                        style="background: rgba(6, 182, 212, 0.08); border-color: rgba(6, 182, 212, 0.2);">Normalized
+                                        SQL Schemas</span>
+                                </div>
+
+                                <!-- Metrics & Highlights -->
+                                <div
+                                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; background: rgba(7, 10, 15, 0.6); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--glass-border);">
+                                    <div>
+                                        <div
+                                            style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">
+                                            Resource Indexing</div>
+                                        <div style="font-weight: 600; color: var(--text-primary); font-size: 0.92rem;">
+                                            Dynamic Multi-Column Query</div>
+                                    </div>
+                                    <div>
+                                        <div
+                                            style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">
+                                            Circulation Tracker</div>
+                                        <div style="font-weight: 600; color: var(--accent-cyan); font-size: 0.92rem;">
+                                            Dual-State Issue & Return</div>
+                                    </div>
+                                    <div>
+                                        <div
+                                            style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">
+                                            Penalty Matrix</div>
+                                        <div style="font-weight: 600; color: var(--accent-gold); font-size: 0.92rem;">
+                                            Automated Fine Algorithm</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project 3: Bespoke Single-File Portfolios & Web Engines -->
+                        <div class="glass-card-gold reveal-fade-up delay-200 tilt-card glass-spotlight"
+                            style="padding: 40px 32px;">
+                            <div class="tilt-card-inner">
+                                <div
+                                    style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 20px;">
+                                    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                                        <span class="glass-pill glass-pill-gold">Vanilla Architecture</span>
+                                        <span class="glass-pill">Zero-Dependency</span>
+                                        <span class="glass-pill">High-Performance</span>
+                                    </div>
+                                    <span
+                                        style="font-family: var(--font-mono); color: var(--accent-gold); font-size: 0.85rem;">Continuous
+                                        Suite</span>
+                                </div>
+
+                                <h2
+                                    style="font-size: clamp(1.4rem, 2.5vw, 1.9rem); margin-bottom: 14px; color: #ffffff;">
+                                    Bespoke Single-File Portfolios & Web Engines
+                                </h2>
+
+                                <p
+                                    style="font-size: 1rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 24px;">
+                                    An ongoing series of zero-dependency, ultra-lightweight web platforms and
+                                    photography showcases. Featuring custom mathematical physics cursors (linear
+                                    interpolation), hardware-accelerated 3D perspective tilt calculations, off-screen
+                                    dynamic canvas favicons, and layered glassmorphism without loading third-party UI
+                                    runtimes or bloatware.
+                                </p>
+
+                                <!-- Architecture / Tech Spec Badges -->
+                                <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px;">
+                                    <span class="glass-pill"
+                                        style="background: rgba(212, 175, 55, 0.08); border-color: rgba(212, 175, 55, 0.2);">Vanilla
+                                        ES6+ Modules</span>
+                                    <span class="glass-pill"
+                                        style="background: rgba(212, 175, 55, 0.08); border-color: rgba(212, 175, 55, 0.2);">CSS3
+                                        Custom Properties</span>
+                                    <span class="glass-pill"
+                                        style="background: rgba(212, 175, 55, 0.08); border-color: rgba(212, 175, 55, 0.2);">HTML5
+                                        Canvas APIs</span>
+                                    <span class="glass-pill"
+                                        style="background: rgba(212, 175, 55, 0.08); border-color: rgba(212, 175, 55, 0.2);">IntersectionObserver
+                                        APIs</span>
+                                </div>
+
+                                <!-- Metrics & Highlights -->
+                                <div
+                                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; background: rgba(7, 10, 15, 0.6); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--glass-border);">
+                                    <div>
+                                        <div
+                                            style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">
+                                            Runtime Overhead</div>
+                                        <div style="font-weight: 600; color: var(--accent-gold); font-size: 0.92rem;">0
+                                            External Dependencies</div>
+                                    </div>
+                                    <div>
+                                        <div
+                                            style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">
+                                            Frame Budget</div>
+                                        <div
+                                            style="font-weight: 600; color: var(--accent-emerald); font-size: 0.92rem;">
+                                            Sustained 60 FPS GPU Lerp</div>
+                                    </div>
+                                    <div>
+                                        <div
+                                            style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">
+                                            Load Profile</div>
+                                        <div style="font-weight: 600; color: var(--text-primary); font-size: 0.92rem;">
+                                            Sub-500ms Instant Paint</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Global Frosted Luxury Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div>
+                        <div class="nav-brand" style="margin-bottom: 8px;">
+                            <span class="nav-monogram">AR</span>
+                            <span>Abdul Razak Bhutto</span>
+                        </div>
+                        <p style="font-size: 0.9rem; max-width: 400px;">
+                            Computer Science Subject Specialist at IBA Public School Sukkur | MPhil Scholar | Software
+                            Engineer
+                        </p>
+                    </div>
+
+                    <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+                        <a href="https://github.com/Abdul-Razak-B/" target="_blank" rel="noopener noreferrer"
+                            class="glass-pill">GitHub</a>
+                        <a href="https://www.linkedin.com/in/abdul-razak-19ba0927b/" target="_blank"
+                            rel="noopener noreferrer" class="glass-pill">LinkedIn</a>
+                        <a href="https://web.facebook.com/abdulrazak.00786/" target="_blank" rel="noopener noreferrer"
+                            class="glass-pill">Facebook</a>
+                        <a href="https://www.instagram.com/abdulrazak.00786/" target="_blank" rel="noopener noreferrer"
+                            class="glass-pill">Instagram</a>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <div>
+                        &copy; <span id="current-year">2026</span> Abdul Razak Bhutto. All Rights Reserved.
+                    </div>
+                    <div>
+                        Daharki / Sukkur Region, Sindh, Pakistan
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Floating Action WhatsApp Bridge Button -->
+        <a href="https://wa.me/923090609391?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20Mr.%20Abdul%20Razak%20Bhutto%2C%20I%20am%20reaching%20out%20regarding%20your%20Software%20Capstones."
+            target="_blank" rel="noopener noreferrer" class="floating-whatsapp"
+            aria-label="Connect directly on WhatsApp">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                    d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+            </svg>
+        </a>
+
+        <!-- Script Modules -->
+        <script src="js/favicon.js"></script>
+        <script src="js/cursor.js"></script>
+        <script src="js/tilt-gallery.js"></script>
+        <script src="js/contact-bridge.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+
+</html>

@@ -1,0 +1,333 @@
+/* ==========================================================================
+   LUXURY CORE STYLESHEET (AUDITED & PRODUCTION TESTED)
+   Author: Abdul Razak Bhutto
+   Role: Computer Science Subject Specialist | MPhil Scholar
+   Architecture: Zero-Dependency Vanilla CSS Custom Properties & Base Tokens
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. DESIGN TOKENS & SYSTEM VARIABLES
+   -------------------------------------------------------------------------- */
+:root {
+    /* Obsidian & Charcoal Base Canvas Palette */
+    --bg-primary: #070a0f;
+    --bg-secondary: #0b0f17;
+    --bg-surface: #0f172a;
+    --bg-surface-elevated: #1e293b;
+    --bg-surface-accent: rgba(15, 23, 42, 0.75);
+
+    /* Frosted Glass Custom Properties */
+    --glass-bg: rgba(15, 23, 42, 0.65);
+    --glass-bg-hover: rgba(30, 41, 59, 0.8);
+    --glass-bg-subtle: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-border-light: rgba(255, 255, 255, 0.15);
+    --glass-border-gold: rgba(212, 175, 55, 0.35);
+    --glass-border-cyan: rgba(6, 182, 212, 0.35);
+    --glass-blur: blur(16px);
+    --glass-blur-heavy: blur(24px);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+    --glass-shadow-glow: 0 12px 40px 0 rgba(212, 175, 55, 0.12);
+
+    /* Luxury Accents & Metallics */
+    --accent-gold: #d4af37;
+    --accent-gold-light: #f59e0b;
+    --accent-gold-dark: #996515;
+    --accent-gold-glow: rgba(212, 175, 55, 0.25);
+    --accent-gold-subtle: rgba(212, 175, 55, 0.08);
+
+    --accent-cyan: #06b6d4;
+    --accent-cyan-glow: rgba(6, 182, 212, 0.25);
+    --accent-emerald: #10b981;
+    --accent-emerald-glow: rgba(16, 185, 129, 0.25);
+    --accent-crimson: #ef4444;
+
+    /* Typography Colors */
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --text-gold: #fbbf24;
+    --text-cyan: #38bdf8;
+
+    /* Typography Stacks */
+    --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-mono: "Fira Code", "JetBrains Mono", "SF Mono", Consolas, "Courier New", monospace;
+    --font-serif: "Playfair Display", Georgia, "Times New Roman", serif;
+
+    /* Sizing, Spacing & Layout */
+    --nav-height: 76px;
+    --container-max: 1240px;
+    --container-narrow: 860px;
+    --section-padding-y: 96px;
+    --section-padding-x: 24px;
+
+    /* Radii */
+    --radius-xs: 4px;
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 22px;
+    --radius-xl: 32px;
+    --radius-full: 9999px;
+
+    /* Transitions & Curves */
+    --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-spring: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* --------------------------------------------------------------------------
+   2. CSS RESET & GLOBAL NORMALIZE
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.65;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Valid Standard Selection Syntax */
+::selection {
+    background-color: var(--accent-gold);
+    color: var(--bg-primary);
+}
+
+::-moz-selection {
+    background-color: var(--accent-gold);
+    color: var(--bg-primary);
+}
+
+img,
+svg,
+picture,
+video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    color: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+/* --------------------------------------------------------------------------
+   3. LUXURY BACKGROUND MESH & ATMOSPHERIC GLOW
+   -------------------------------------------------------------------------- */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background:
+        radial-gradient(circle at 15% 15%, rgba(212, 175, 55, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 85% 20%, rgba(6, 182, 212, 0.04) 0%, transparent 40%),
+        radial-gradient(circle at 50% 80%, rgba(16, 185, 129, 0.03) 0%, transparent 50%),
+        linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    pointer-events: none;
+    z-index: -2;
+    transform: translateZ(0);
+}
+
+/* Architectural Grid Texture */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+    background-size: 64px 64px;
+    background-position: -1px -1px;
+    pointer-events: none;
+    z-index: -1;
+    transform: translateZ(0);
+}
+
+/* --------------------------------------------------------------------------
+   4. LAYOUT & CONTAINER PRIMITIVES
+   -------------------------------------------------------------------------- */
+.container {
+    width: 100%;
+    max-width: var(--container-max);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--section-padding-x);
+    padding-right: var(--section-padding-x);
+}
+
+.container-narrow {
+    width: 100%;
+    max-width: var(--container-narrow);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--section-padding-x);
+    padding-right: var(--section-padding-x);
+}
+
+.section {
+    padding-top: var(--section-padding-y);
+    padding-bottom: var(--section-padding-y);
+    position: relative;
+}
+
+.section-hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: calc(var(--nav-height) + 40px);
+    padding-bottom: 60px;
+}
+
+/* --------------------------------------------------------------------------
+   5. LUXURY TYPOGRAPHY SYSTEM
+   -------------------------------------------------------------------------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text-primary);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+h1 {
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: 800;
+}
+
+h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.75rem);
+}
+
+h3 {
+    font-size: clamp(1.3rem, 2.2vw, 1.75rem);
+}
+
+h4 {
+    font-size: 1.25rem;
+}
+
+p {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.75;
+}
+
+.text-gold {
+    color: var(--text-gold);
+}
+
+.text-cyan {
+    color: var(--text-cyan);
+}
+
+.text-muted {
+    color: var(--text-muted);
+}
+
+.text-gradient-gold {
+    background: linear-gradient(135deg, #ffffff 0%, var(--accent-gold) 50%, var(--accent-gold-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.text-gradient-cyan {
+    background: linear-gradient(135deg, #ffffff 0%, var(--accent-cyan) 60%, #0284c7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.section-header {
+    margin-bottom: 48px;
+    position: relative;
+}
+
+.section-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 12px;
+}
+
+.section-eyebrow::before {
+    content: "";
+    width: 16px;
+    height: 2px;
+    background-color: var(--accent-gold);
+}
+
+.section-title {
+    margin-bottom: 16px;
+}
+
+.section-subtitle {
+    max-width: 680px;
+    font-size: 1.15rem;
+}
+
+/* --------------------------------------------------------------------------
+   6. ACCESSIBILITY OVERRIDES (Reduced Motion)
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

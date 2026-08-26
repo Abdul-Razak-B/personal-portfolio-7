@@ -1,0 +1,176 @@
+/* ==========================================================================
+   GLASSMORPHISM & SPECULAR LIGHTING STYLESHEET
+   Author: Abdul Razak Bhutto
+   Role: Computer Science Subject Specialist | MPhil Scholar
+   Architecture: Layered Translucent Surfaces, Frosted Backdrops & Light Borders
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CORE FROSTED GLASS SURFACES
+   -------------------------------------------------------------------------- */
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    border-radius: var(--radius-lg);
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition-smooth);
+}
+
+.glass-panel-elevated {
+    background: var(--glass-bg-hover);
+    backdrop-filter: var(--glass-blur-heavy);
+    -webkit-backdrop-filter: var(--glass-blur-heavy);
+    border: 1px solid var(--glass-border-light);
+    box-shadow: 0 16px 40px 0 rgba(0, 0, 0, 0.55);
+    border-radius: var(--radius-lg);
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-panel-subtle {
+    background: var(--glass-bg-subtle);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+}
+
+/* --------------------------------------------------------------------------
+   2. LUXURY ACCENT GLASS VARIANTS
+   -------------------------------------------------------------------------- */
+.glass-card-gold {
+    background: linear-gradient(135deg,
+            rgba(212, 175, 55, 0.05) 0%,
+            rgba(15, 23, 42, 0.7) 100%);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border-gold);
+    box-shadow: var(--glass-shadow), 0 0 20px 0 rgba(212, 175, 55, 0.08);
+    border-radius: var(--radius-lg);
+    transition: var(--transition-smooth);
+}
+
+.glass-card-gold:hover {
+    border-color: rgba(212, 175, 55, 0.6);
+    box-shadow: var(--glass-shadow), 0 0 30px 0 rgba(212, 175, 55, 0.2);
+    transform: translateY(-4px);
+}
+
+.glass-card-cyan {
+    background: linear-gradient(135deg,
+            rgba(6, 182, 212, 0.05) 0%,
+            rgba(15, 23, 42, 0.7) 100%);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border-cyan);
+    box-shadow: var(--glass-shadow), 0 0 20px 0 rgba(6, 182, 212, 0.08);
+    border-radius: var(--radius-lg);
+    transition: var(--transition-smooth);
+}
+
+.glass-card-cyan:hover {
+    border-color: rgba(6, 182, 212, 0.6);
+    box-shadow: var(--glass-shadow), 0 0 30px 0 rgba(6, 182, 212, 0.2);
+    transform: translateY(-4px);
+}
+
+/* --------------------------------------------------------------------------
+   3. SPECULAR LIGHT SHIMMER & GRADIENT BORDER ACCENTS
+   -------------------------------------------------------------------------- */
+.glass-panel::before,
+.glass-card-gold::before,
+.glass-card-cyan::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.2) 30%,
+            rgba(212, 175, 55, 0.4) 50%,
+            rgba(255, 255, 255, 0.2) 70%,
+            transparent 100%);
+    pointer-events: none;
+}
+
+/* Dynamic Radial Cursor Spotlight Overlay (Injected via JS) */
+.glass-spotlight {
+    position: relative;
+}
+
+.glass-spotlight::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+            rgba(212, 175, 55, 0.12),
+            transparent 40%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    border-radius: inherit;
+    z-index: 1;
+}
+
+.glass-spotlight:hover::after {
+    opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   4. GLASS PILL BADGES & CHIPS
+   -------------------------------------------------------------------------- */
+.glass-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: var(--transition-fast);
+}
+
+.glass-pill:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--glass-border-light);
+    color: var(--text-primary);
+}
+
+.glass-pill-gold {
+    background: rgba(212, 175, 55, 0.08);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    color: var(--text-gold);
+}
+
+.glass-pill-gold:hover {
+    background: rgba(212, 175, 55, 0.15);
+    border-color: var(--accent-gold);
+}
+
+/* --------------------------------------------------------------------------
+   5. BACKDROP BLUR FALLBACKS FOR OLDER ENGINES
+   -------------------------------------------------------------------------- */
+@supports not (backdrop-filter: blur(16px)) {
+
+    .glass-panel,
+    .glass-panel-elevated,
+    .glass-card-gold,
+    .glass-card-cyan,
+    .glass-pill {
+        background-color: #0d1525;
+    }
+}

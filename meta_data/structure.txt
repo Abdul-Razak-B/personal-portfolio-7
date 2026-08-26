@@ -1,0 +1,22 @@
+portfolio-root/
+│
+├── index.html              # Landing Page: Hero, Identity, Core Highlights, Dynamic Terminal
+├── about.html              # Biography, Academic Journey, Pedagogy, Timeline Dossier
+├── research.html           # MPhil Work, Publications (DEEPLNET), Citations, Certifications
+├── projects.html           # Project Showcases: Interactive 3D Cards, Live Demos, Schemas
+├── contact.html            # Inquiry Matrix, Direct Communication Channels, Social Hub
+│
+├── css/
+│   ├── luxury-core.css     # Design tokens, variables, typography, reset, luxury themes
+│   ├── glassmorphism.css   # Frosted glass layers, border glow, backdrop filters, shadows
+│   ├── components.css      # Cursors, scrollbars, buttons, cards, navbar, footer, modals
+│   └── animations.css      # Keyframes, hover matrix, entrance reveal, 3D transform states
+│
+├── js/
+│   ├── main.js             # Navigation handler, state controller, page transition manager
+│   ├── cursor.js           # Physics-based lerp smooth-follow custom cursor engine
+│   ├── favicon.js          # Dynamic HTML5 Canvas-based animated browser tab icon
+│   ├── tilt-gallery.js     # 3D gyro/mouse-reactive card tilt and spotlight reflection
+│   └── contact-bridge.js   # WhatsApp direct bridge generator and validation logic
+│
+└── assets/                 # Icons, badges, schemas, and media assets
